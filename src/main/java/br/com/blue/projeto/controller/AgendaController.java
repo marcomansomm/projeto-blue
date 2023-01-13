@@ -18,14 +18,15 @@ import br.com.blue.projeto.entity.Agenda;
 import br.com.blue.projeto.service.AgendaService;
 
 @RestController
-@RequestMapping("/agenda")
+@RequestMapping("/api")
 public class AgendaController {
     
     @Autowired
     private AgendaService agendaService;
 
-    @GetMapping
+    @GetMapping("/agendas")
     public List<Agenda> obterAgenda(){
+
         return this.agendaService.obterAgenda();
     }
 
@@ -39,6 +40,7 @@ public class AgendaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Agenda> atualizarAgenda(@PathVariable long id, @RequestBody Agenda agenda){
+    
         Agenda agendaAtualizada = this.agendaService.atualizarAgenda(id, agenda);
 
         return new ResponseEntity<Agenda>(agendaAtualizada, HttpStatus.OK);
@@ -46,7 +48,9 @@ public class AgendaController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletarAgenda(@PathVariable long id){
+    
         this.agendaService.deletarAgenda(id);
+    
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     } 
 }
