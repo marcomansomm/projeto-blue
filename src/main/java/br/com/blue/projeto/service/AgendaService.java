@@ -15,12 +15,23 @@ public class AgendaService {
     @Autowired
     private AgendaRepository repositoryAgenda;
 
-    public Agenda cadastrarAgenda(Agenda AgendaNova){
+    public boolean verificaEmail (String email){ 
+        String regex = "^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$"; 
+        return email.matches(regex); 
+    }
 
-        if(AgendaNova.getNome().length() > 3 && AgendaNova.getNome().length() < 190);
-        if(AgendaNova.getTelefone().length() == 11);
+    public boolean verificaTelefone (String telefone){ 
+        String regex = "^((\\+\\d{2}\\s)?\\(\\d{2}\\)\\s?\\d{4}\\d?\\-\\d{4})?$"; 
+        return telefone.matches(regex); 
+    }
 
-        return this.repositoryAgenda.save(AgendaNova);
+    public Agenda cadastrarAgenda(Agenda agendaNova){
+
+        if(agendaNova.getNome().length() < 3 || agendaNova.getNome().length() > 190) throw new RuntimeException("O Nome precisa ter mais de 3 letras");
+        if(!this.verificaTelefone(agendaNova.getTelefone())) throw new RuntimeException("O numero Precisa ser escrito nesse modelo = (**) *****-****");
+        if(!this.verificaEmail(agendaNova.getEmail())) throw new RuntimeException("Escreva o email assim nome@dominio.com");
+
+        return this.repositoryAgenda.save(agendaNova);
     }
 
     public List<Agenda> obterAgenda(){
@@ -38,8 +49,9 @@ public class AgendaService {
     public Agenda atualizarAgenda(long id, Agenda agendaAtualizada){
         Agenda agenda = this.obterAgendaPorId(id);
         
-        if(agendaAtualizada.getNome().length() > 3 && agendaAtualizada.getNome().length() < 190);
-        if(agendaAtualizada.getTelefone().length() == 11);
+        if(agendaAtualizada.getNome().length() < 3 || agendaAtualizada.getNome().length() > 190) throw new RuntimeException("O Nome precisa ter mais de 3 letras");
+        if(!this.verificaTelefone(agendaAtualizada.getTelefone())) throw new RuntimeException("O numero Precisa ser escrito nesse modelo = (**) *****-****");
+        if(!this.verificaEmail(agendaAtualizada.getEmail())) throw new RuntimeException("Escreva o email assim nome@dominio.com");
         
         agenda.setNome(agendaAtualizada.getNome());
         agenda.setEmail(agendaAtualizada.getEmail());
