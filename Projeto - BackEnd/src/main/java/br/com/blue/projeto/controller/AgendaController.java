@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,13 +19,14 @@ import br.com.blue.projeto.entity.Agenda;
 import br.com.blue.projeto.service.AgendaService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/agendas")
+@CrossOrigin("http://localhost:8080/")
 public class AgendaController {
     
     @Autowired
     private AgendaService agendaService;
 
-    @GetMapping("/agendas")
+    @GetMapping
     public List<Agenda> obterAgenda(){
 
         return this.agendaService.obterAgenda();
