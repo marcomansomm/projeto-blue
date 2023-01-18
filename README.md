@@ -85,6 +85,10 @@ $ npm run serve
 # aplicação iniciará em <http://localhost:8080/>
 ```
 
+### Swagger
+```php
+# O swagger iniciará em <localhost:8090/swagger-ui/index.html#/>
+```
 <br>
 
 ## 🛠 tecnologias
