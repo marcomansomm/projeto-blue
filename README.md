@@ -32,8 +32,10 @@ Framework/biblioteca Java:
 - Lombok
 - MySQL Driver
 
-Framework/biblioteca JavaScript:
+Framework/biblioteca Front-End:
 - Vue.js
+- BootStrap
+- Axios
 
 ## 📥 download
 
