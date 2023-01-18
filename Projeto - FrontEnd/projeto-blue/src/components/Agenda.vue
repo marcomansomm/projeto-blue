@@ -5,15 +5,15 @@
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input type="hidden" id="id" name="id">
-                <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite Seu Nome">
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Marcoantonio Manso">
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Digite Seu Telefone">
+                <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(XX) XXXXX-XXXX">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" id="email" placeholder="Digite Seu Email">
+                <input type="text" class="form-control" name="email" id="email" placeholder="fulano@gmail.com">
             </div>
             <button v-on:click="cadastrar()" type="button" class="btn btn-primary">Enviar</button>
         </form>
@@ -76,6 +76,7 @@ const URL = `http://localhost:8090/agendas`
                         telefone: document.getElementById("telefone").value,
                         email: document.getElementById("email").value
                     }).then(() => {
+                        alert("Cadastrado Com Sucesso!!")
                         this.listar(this)
                     })
                 }
@@ -83,6 +84,7 @@ const URL = `http://localhost:8090/agendas`
             },
 
             deletar(id) {
+                if(confirm("Você deseja excluir este Contato??"))
                 axios.delete(`http://localhost:8090/agendas/${id}`).then(() =>{
                     this.listar()
                 })
@@ -94,6 +96,7 @@ const URL = `http://localhost:8090/agendas`
                 this.agenda = agenda;
             },
             atualizar() {
+                alert("Atualizado Com Sucesso!!")
                 this.agenda.nome = document.getElementById("nome").value;
                 this.agenda.telefone = document.getElementById("telefone").value;
                 this.agenda.email = document.getElementById("email").value;
@@ -110,3 +113,10 @@ const URL = `http://localhost:8090/agendas`
     }
 
 </script>
+
+<style>
+.form-group{
+    text-align: left;
+    margin: 20px;
+}
+</style>
