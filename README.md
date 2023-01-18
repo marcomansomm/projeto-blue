@@ -5,14 +5,13 @@ Bem-vindo(a).
 Olá, como vai?! Meu nome é [Marcoantonio](https://www.linkedin.com/in/marcoantoniomanso/) e estou participando do processo seletivo da [Blue](https://www.bluetechnology.com.br/).
 Venho por meio deste repositorio entregar a aplicação `Full-Stack` do desafio. Espero que você goste!
 
-> <b>Status code:</b> Em Andamento! 💙🚀
+> <b>Status code:</b> Finalizado! 💙🚀
 
 <br>
 
 ## ℹ index
 
 -   [🧠 contexto](#-contexto)
-      - [rotas](#-rotas-implementadas)
 -   [📥 download](#-download)
     -   [setup](#-setup)
     -   [starting](#-starting)
@@ -24,10 +23,17 @@ Criação de uma API para realizar CRUD de uma agenda. Aplicação contem
 
 - CRUD da agenda
 - Utilização de POO
+- Utilização de JavaScript
 
 Framework/biblioteca Java:
 - Spring Boot
 - Spring Data JPA
+- Spring Web
+- Lombok
+- MySQL Driver
+
+Framework/biblioteca JavaScript:
+- Vue.js
 
 ## 📥 download
 
@@ -36,22 +42,43 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 
 ### 💻 setup
 
+### Back-End
 ```php
 # clonar este repositório
 $ git clone https://github.com/marcomansomm/api-java-audax.git
 
 # acesse a pasta do projeto
-$ cd api-java-audax
+$ cd \Projeto - BackEnd
 
 # instale as dependências
 $ ./mvnw install
 ```
 
+### Front-End
+
+```php
+# instalar o gerenciador de pacotes do javascript 
+$ npm install
+
+# acesse a pasta do projeto
+$ cd projeto-blue
+```
+
 ## ▶ starting
 
+### Back-End
 ```php
 # executando o comando
 $ ./mvnw spring-boot:run
+
+# aplicação iniciará em <http://localhost:8090/>
+```
+
+### Front-End
+
+```php
+# executando o comando
+$ npm run serve
 
 # aplicação iniciará em <http://localhost:8080/>
 ```
@@ -70,6 +97,10 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 | <img height="35" width="40" src="https://skillicons.dev/icons?i=java">     |          [Java](https://www.java.com/pt-BR/)          | `19.0.0` |
 | <img height="35" width="40" src="https://skillicons.dev/icons?i=spring">   |        [SpringBoot](https://start.spring.io/)         | `2.7.5`  |
 | <img height="35" width="40" src="https://skillicons.dev/icons?i=maven">    |           [Maven](https://maven.apache.org)           | `4.0.0`  |
+| <img height="35" width="40" src="https://skillicons.dev/icons?i=javascript">    |           [JavaScript](https://www.javascript.com/)           | `ECMAScript 2022`  |
+| <img height="35" width="40" src="https://skillicons.dev/icons?i=vue">    |           [Vue.js](https://vuejs.org/)           | `3.0.0`  |
+
+
 
 <br>
 
