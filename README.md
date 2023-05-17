@@ -1,8 +1,8 @@
-# 🚀 blue desafio Java
+# 🚀 Projeto Blue
 
 Bem-vindo(a).
 
-Olá, como vai?! Meu nome é [Marcoantonio](https://www.linkedin.com/in/marcoantoniomanso/) e estou participando do processo seletivo da [Blue](https://www.bluetechnology.com.br/).
+Olá, como vai?! Meu nome é [Marcoantonio](https://www.linkedin.com/in/marcoantoniomanso/).
 Venho por meio deste repositorio entregar a aplicação `Full-Stack` do desafio. Espero que você goste!
 
 > <b>Status code:</b> Finalizado! 💙🚀
@@ -47,7 +47,7 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 ### Back-End
 ```php
 # clonar este repositório
-$ git clone https://github.com/marcomansomm/api-java-audax.git
+$ git clone https://github.com/marcomansomm/projeto-blue.git
 
 # acesse a pasta do projeto
 $ cd \Projeto - BackEnd
